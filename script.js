@@ -263,10 +263,11 @@ function showDownloadPage() {
     document.getElementById('download-page').style.display = 'block';
     window.scrollTo(0, 0);
     
+    const downloadReveals = document.querySelectorAll('#download-page .reveal');
+    downloadReveals.forEach(el => el.classList.remove('active'));
+    
     setTimeout(() => {
-        document.querySelectorAll('#download-page .reveal').forEach(el => {
-            el.classList.add('active');
-        });
+        downloadReveals.forEach(el => el.classList.add('active'));
     }, 50);
 }
 
@@ -275,6 +276,18 @@ function showMainPage(event) {
     document.getElementById('download-page').style.display = 'none';
     document.getElementById('main-page').style.display = 'flex';
     window.scrollTo(0, 0);
+    
+    const mainReveals = document.querySelectorAll('#main-page .reveal');
+    mainReveals.forEach(el => el.classList.remove('active'));
+    
+    setTimeout(() => {
+        mainReveals.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                el.classList.add('active');
+            }
+        });
+    }, 50);
 }
 
 function toggleFaq(button) {
