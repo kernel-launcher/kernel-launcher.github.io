@@ -205,7 +205,6 @@ function setLanguage(lang) {
     localStorage.setItem('kernel-lang', lang);
     
     document.getElementById('langDropdown').classList.remove('open');
-
     document.getElementById('current-lang-text').innerText = translations[lang].langName;
     
     document.querySelectorAll('.lang-item').forEach(item => {
@@ -299,7 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const reveals = document.querySelectorAll('.reveal');
 
     const revealOptions = {
-        threshold: 0.15, // Срабатывает, когда 15% элемента видно на экране
+        threshold: 0.15,
         rootMargin: "0px 0px -50px 0px"
     };
 
@@ -309,12 +308,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             } else {
                 entry.target.classList.add('active');
-                observer.unobserve(entry.target); // Анимируем только один раз
+                observer.unobserve(entry.target);
             }
         });
     }, revealOptions);
 
     reveals.forEach(reveal => {
         revealOnScroll.observe(reveal);
+        
+        const rect = reveal.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+            reveal.classList.add('active');
+        }
     });
 });
