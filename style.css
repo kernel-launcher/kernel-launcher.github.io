@@ -72,19 +72,22 @@ body {
     letter-spacing: -0.5px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     text-decoration: none;
     color: white;
 }
 
-.logo svg {
-    width: 24px;
-    height: 24px;
-    fill: var(--primary);
+.logo-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    object-fit: contain;
+    background-color: #ffffff;
+    padding: 4px;
     transition: transform 0.3s ease;
 }
 
-.logo:hover svg {
+.logo:hover .logo-img {
     transform: rotate(90deg) scale(1.1);
 }
 
