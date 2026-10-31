@@ -7,12 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Navbar -->
     <nav class="navbar">
         <a href="#" class="logo" onclick="showMainPage(event)">
             <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
@@ -41,10 +39,8 @@
         </div>
     </nav>
 
-    <!-- Main Landing Page -->
     <div id="main-page" class="main-wrapper">
         
-        <!-- Hero Section -->
         <section class="hero">
             <div class="badge reveal" id="t-badge">For your next world</div>
             <h1 class="reveal" id="t-title">Minecraft,<br>without the<br>extra complexity.</h1>
@@ -61,14 +57,12 @@
             </a>
         </section>
 
-        <!-- Features Section -->
         <section class="features-section" id="features">
             <div class="section-header reveal">
                 <h2 id="t-features-title">Why Kernel?</h2>
                 <p id="t-features-subtitle">Built for performance, designed for you.</p>
             </div>
             <div class="features-grid">
-                <!-- Reveal and timings -->
                 <div class="feature-card reveal delay-1">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
@@ -93,7 +87,6 @@
             </div>
         </section>
 
-        <!-- CTA Section -->
         <section class="cta-section">
             <div class="cta-content reveal">
                 <h2 id="t-cta-title">Ready to jump in?</h2>
@@ -105,11 +98,10 @@
             </div>
         </section>
 
-        <!-- FAQ Section -->
         <section class="faq-section" id="faq-section">
             <h2 class="reveal" id="t-faq-title">Frequently Asked Questions</h2>
             
-            <div class="faq-item reveal delay-1">
+            <div class="faq-item">
                 <button class="faq-question" onclick="toggleFaq(this)">
                     <span id="t-faq-q1">Is Kernel Launcher free?</span>
                     <span class="icon">+</span>
@@ -119,7 +111,7 @@
                 </div>
             </div>
 
-            <div class="faq-item reveal delay-2">
+            <div class="faq-item">
                 <button class="faq-question" onclick="toggleFaq(this)">
                     <span id="t-faq-q2">Do I need a legitimate Minecraft account?</span>
                     <span class="icon">+</span>
@@ -129,7 +121,7 @@
                 </div>
             </div>
 
-            <div class="faq-item reveal delay-3">
+            <div class="faq-item">
                 <button class="faq-question" onclick="toggleFaq(this)">
                     <span id="t-faq-q3">Is it safe to use?</span>
                     <span class="icon">+</span>
@@ -141,10 +133,8 @@
         </section>
     </div>
 
-    <!-- Download Page -->
     <div id="download-page" class="download-wrapper">
         <div class="download-container">
-            <!-- Download animation -->
             <h1 class="download-title reveal" id="t-dl-title">Choose your version</h1>
             <p class="download-subtitle reveal delay-1" id="t-dl-subtitle">Select the installation method that suits you best.</p>
             
@@ -169,7 +159,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <p>&copy; 2026 Kernel Launcher Team. <span id="t-rights">All rights reserved.</span></p>
