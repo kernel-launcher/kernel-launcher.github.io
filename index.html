@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Kernel Launcher - Next Gen Minecraft Experience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="#" class="logo" onclick="showMainPage(event)">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            KERNEL LAUNCHER
+        </a>
+        
+        <div class="nav-links">
+            <a href="#features" id="nav-features">Features</a>
+            <a href="#faq-section" id="nav-faq">FAQ</a>
+            <a href="https://github.com/Kernel-Launcher-Team/kernel-launcher" target="_blank">GitHub ↗</a>
+            
+            <div class="lang-dropdown" id="langDropdown">
+                <button class="lang-btn-toggle" onclick="toggleLangMenu(event)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    <span id="current-lang-text">EN</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="lang-menu" id="langMenu">
+                    <div class="lang-item active" onclick="setLanguage('en')">🇬🇧 English (EN)</div>
+                    <div class="lang-item" onclick="setLanguage('ru')">🇷🇺 Русский (RU)</div>
+                    <div class="lang-item" onclick="setLanguage('es')">🇪🇸 Español (ES)</div>
+                    <div class="lang-item" onclick="setLanguage('zh')">🇨🇳 中文 (ZH)</div>
+                    <div class="lang-item" onclick="setLanguage('ja')">🇯🇵 日本語 (JA)</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Landing Page -->
+    <div id="main-page" class="main-wrapper">
+        
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="badge reveal" id="t-badge">For your next world</div>
+            <h1 class="reveal" id="t-title">Minecraft,<br>without the<br>extra complexity.</h1>
+            <p class="reveal" id="t-subtitle">The next generation Minecraft experience. Everything you need in one place. Less setup — more time to play.</p>
+            
+            <button class="btn-main reveal" onclick="showDownloadPage()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <span id="t-download-btn">Download Now</span>
+            </button>
+            
+            <a href="https://www.donationalerts.com/c/lenty13" target="_blank" class="donate-link reveal">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                <span id="t-donate">Support the Project</span>
+            </a>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section" id="features">
+            <div class="section-header reveal">
+                <h2 id="t-features-title">Why Kernel?</h2>
+                <p id="t-features-subtitle">Built for performance, designed for you.</p>
+            </div>
+            <div class="features-grid">
+                <!-- Reveal and timings -->
+                <div class="feature-card reveal delay-1">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+                    </div>
+                    <h3 id="t-f1-title">Lightning Fast</h3>
+                    <p id="t-f1-desc">Optimized launch times and minimal RAM usage so you can get into the game faster.</p>
+                </div>
+                <div class="feature-card reveal delay-2">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <h3 id="t-f2-title">Secure & Open Source</h3>
+                    <p id="t-f2-desc">Fully transparent code on GitHub. No hidden telemetry, no malware, just pure Minecraft.</p>
+                </div>
+                <div class="feature-card reveal delay-3">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    </div>
+                    <h3 id="t-f3-title">Mod Support</h3>
+                    <p id="t-f3-desc">Easily manage mods, resource packs, and different game versions in one sleek interface.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-content reveal">
+                <h2 id="t-cta-title">Ready to jump in?</h2>
+                <p id="t-cta-desc">Join thousands of players who have already upgraded their Minecraft experience.</p>
+                <button class="btn-main cta-btn" onclick="showDownloadPage()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    <span id="t-cta-btn">Download Kernel</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" id="faq-section">
+            <h2 class="reveal" id="t-faq-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-item reveal delay-1">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span id="t-faq-q1">Is Kernel Launcher free?</span>
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p id="t-faq-a1">Yes, Kernel Launcher is completely free and open-source. You can support the development via DonationAlerts.</p>
+                </div>
+            </div>
+
+            <div class="faq-item reveal delay-2">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span id="t-faq-q2">Do I need a legitimate Minecraft account?</span>
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p id="t-faq-a2">Kernel Launcher supports both premium Microsoft accounts and offline mode for playing with friends on local networks or servers that allow it.</p>
+                </div>
+            </div>
+
+            <div class="faq-item reveal delay-3">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span id="t-faq-q3">Is it safe to use?</span>
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p id="t-faq-a3">Absolutely. Our source code is publicly available on GitHub, and all builds are compiled automatically via GitHub Actions.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Download Page -->
+    <div id="download-page" class="download-wrapper">
+        <div class="download-container">
+            <!-- Download animation -->
+            <h1 class="download-title reveal" id="t-dl-title">Choose your version</h1>
+            <p class="download-subtitle reveal delay-1" id="t-dl-subtitle">Select the installation method that suits you best.</p>
+            
+            <div class="download-options">
+                <a href="https://github.com/Kernel-Launcher-Team/kernel-launcher/releases/download/1.1.0/Kernel_Launcher_Setup_1.1.0.exe" class="download-card reveal delay-2">
+                    <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                    <h3 id="t-dl-installer">Installer</h3>
+                    <p id="t-dl-installer-desc">Standard installation for Windows. Creates shortcuts.</p>
+                </a>
+                
+                <a href="https://github.com/Kernel-Launcher-Team/kernel-launcher/releases/download/1.1.0/Kernel_Launcher_Portable_1.1.0.exe" class="download-card reveal delay-3">
+                    <svg viewBox="0 0 24 24"><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"/></svg>
+                    <h3 id="t-dl-portable">Portable Version</h3>
+                    <p id="t-dl-portable-desc">No installation required. Run directly from the folder.</p>
+                </a>
+            </div>
+
+            <button class="back-btn reveal delay-4" onclick="showMainPage(event)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                <span id="t-back">Back to Home</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Kernel Launcher Team. <span id="t-rights">All rights reserved.</span></p>
+            <div class="footer-links">
+                <a href="https://github.com/Kernel-Launcher-Team/kernel-launcher" target="_blank">GitHub Repository</a>
+                <a href="https://www.donationalerts.com/c/lenty13" target="_blank">Donate</a>
+            </div>
+            <p class="disclaimer" id="t-disclaimer">
+                This project is not affiliated with Mojang Studios or Microsoft. Minecraft is a trademark of Mojang Synergies AB.
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
