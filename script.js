@@ -276,9 +276,6 @@ function showMainPage(event) {
     document.getElementById('download-page').style.display = 'none';
     document.getElementById('main-page').style.display = 'flex';
     window.scrollTo(0, 0);
-    
-    const mainReveals = document.querySelectorAll('#main-page .reveal');
-    mainReveals.forEach(el => el.classList.add('active'));
 }
 
 function toggleFaq(button) {
@@ -299,8 +296,7 @@ function toggleFaq(button) {
 document.addEventListener('DOMContentLoaded', () => {
     setLanguage(currentLang);
 
-    const reveals = document.querySelectorAll('.reveal');
-
+    const downloadReveals = document.querySelectorAll('#download-page .reveal');
     const revealOptions = {
         threshold: 0.15,
         rootMargin: "0px 0px -50px 0px"
@@ -317,12 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, revealOptions);
 
-    reveals.forEach(reveal => {
+    downloadReveals.forEach(reveal => {
         revealOnScroll.observe(reveal);
-        
-        const rect = reveal.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom >= 0) {
-            reveal.classList.add('active');
-        }
     });
 });
