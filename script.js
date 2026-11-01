@@ -278,16 +278,7 @@ function showMainPage(event) {
     window.scrollTo(0, 0);
     
     const mainReveals = document.querySelectorAll('#main-page .reveal');
-    mainReveals.forEach(el => el.classList.remove('active'));
-    
-    setTimeout(() => {
-        mainReveals.forEach(el => {
-            const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight && rect.bottom >= 0) {
-                el.classList.add('active');
-            }
-        });
-    }, 50);
+    mainReveals.forEach(el => el.classList.add('active'));
 }
 
 function toggleFaq(button) {
